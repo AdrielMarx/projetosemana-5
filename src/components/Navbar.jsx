@@ -13,7 +13,7 @@ function Navbar({ isLoggedIn, nomeUser, handleLogin, handleLogout }) {
 
         <header className='navbar'>
             <div className="logo-container">
-                <img src="/logo-gatopoles.png" alt="Logo da Gatopoles" className="logo" />
+                <a href="/"><img src="/logo-gatopoles.png" alt="Logo da Gatopoles" className="logo" /></a>
             </div>
 
             <h3>
@@ -23,12 +23,11 @@ function Navbar({ isLoggedIn, nomeUser, handleLogin, handleLogout }) {
             </h3>
 
             <ul className="nav-links">
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Apadrinhe</a></li>
-                <li><a href="#"><strong>Adote</strong></a></li>
-                {isLoggedIn && <li><a href="#">Perfil</a></li>}
+                <li><a href="contato">Contato</a></li>
+                <li><a href="cadastro">Cadastro</a></li>
+                {!isLoggedIn && <li><a href="login">Login</a></li>}
             </ul>
-
+            
             <div className="login-container">
                 {!isLoggedIn && ( // Exibe o input apenas se não estiver logado
                     <input
@@ -44,6 +43,7 @@ function Navbar({ isLoggedIn, nomeUser, handleLogin, handleLogout }) {
                     onClick={isLoggedIn ? handleLogout : () => handleLogin(inputNome)} // Passa o nome ao fazer login
                 />
             </div>
+            
         </header>
     );
 }
