@@ -1,11 +1,7 @@
-.login-content {
+.contato {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.formulario {
   padding: 16px;
-  height: 320px;
 }

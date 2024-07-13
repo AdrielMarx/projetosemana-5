@@ -23,7 +23,7 @@ function Cadastro() {
         {errors.nome && <Alert key={'secondary'} variant="secondary">{errors.nome.message}</Alert>}
       </div>
       <div>
-        <label htmlFor="email">Informe seu email</label>
+        <label htmlFor="email">Seu melhor Email</label>
         <input type="email"
         id="email"
         className="form-control"
@@ -31,6 +31,24 @@ function Cadastro() {
         {...register('email', {required: 'Email inválido'})} />
         {errors.email && <Alert key={'secondary'} variant="secondary">{errors.email.message}</Alert>}
       </div>
+      <div>
+        <label htmlFor="dataNascimento">Data de nascimento</label>
+        <input type="date"
+        id="dataNascimento"
+        className="form-control"
+        {...register('dataNascimento', {required: 'Selecione uma data'})} />
+        {errors.dataNascimento && <Alert key={'secondary'} variant="secondary">{errors.dataNascimento.message}</Alert>}
+      </div>
+      <div>
+      <label htmlFor="senha">Crie uma senha forte</label>
+          <input type="password"
+          id="senha"
+          className="form-control"
+          placeholder="Ex: 1234@Exempl0"
+          {...register('senha', {required: 'A senha é obrigatória', minLength: {value: 6, message: 'Mínimo de 6 caracteres'}})} />
+          {errors.senha && <Alert key={'secondary'} variant="secondary">{errors.senha.message}</Alert>}
+      </div>
+      <Button type="submit" variant="success" className="mt-2 w-100">Criar conta</Button>
       </form>
       
     </main>
